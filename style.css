@@ -7,13 +7,6 @@
   text-align: center;
 }
 
-#game {
-  width: 800px;
-  height: 800px;
-  display: inline-block;
-  text-align: center;
-}
-
 .div-casa {
   background: #02001F;
   width: 90px;
@@ -22,12 +15,8 @@
   margin: 2px;
 }
 
-.div-casa h1 {
-  color: #fff;
-}
-
 .div-casa:hover {
-  background: wheat;
+  background: #0b00a1;
 }
 
 .player {
@@ -36,44 +25,6 @@
   height: 80%;
   margin: auto;
   margin-top: 10%;
-}
-
-@media (max-width: 820px), (max-height: 820px) {
-  #game {
-    width: 600px;
-    height: 600px;
-  }
-
-  .div-casa {
-    width: 65px;
-    height: 65px;
-    display: inline-block;
-    margin: 2px;
-  }
-}
-
-@media (max-width: 620px), (max-height: 620px) {
-  #game {
-    width: 400px;
-    height: 400px;
-  }
-  .div-casa {
-    width: 44px;
-    height: 44px;
-    margin: 1px;
-  }
-}
-
-@media (max-width: 420px), (max-height: 420px) {
-  #game {
-    width: 300px;
-    height: 300px;
-  }
-  .div-casa {
-    width: 25px;
-    height: 25px;
-    margin: 1px;
-  }
 }
 
 .game-dice {
@@ -104,9 +55,9 @@ textarea:focus, input:focus, select:focus {
   box-shadow: 0 0 0 0;
   border: 0 none;
   outline: 0;
-} 
+}
 
-#select{
+#select {
   height: 30px;
   border-radius: 5px;
   width: 220px;
@@ -114,14 +65,72 @@ textarea:focus, input:focus, select:focus {
   padding-left: 5px;
 }
 
+.select-group {
+  padding: 10px;
+  color: black;
+}
 
-.select-group span{
+.select-group span {
   padding: 10px;
   color: black;
   font-size: 20px;
   padding-left: 5px;
 }
 
-.div-casa.active{
+.div-casa.active {
   background-color: #5D016D;
+}
+
+@media (max-width: 1000px), (max-height: 1000px) {
+  .div-casa {
+    width: 80px;
+    height: 80px;
+    margin: 2px;
+  }
+}
+
+@media (max-width: 860px), (max-height: 860px) {
+  .div-casa {
+    width: 60px;
+    height: 60px;
+    margin: 1px;
+  }
+  #scene {
+    --diePad: 0.2;
+    --minAxis: min(200px, 200px);
+    --maxAxis: max(200px, 200px);
+  }
+  .game-container {
+    margin-top: 130px;
+  }
+}
+
+@media (max-width: 640px), (max-height: 640px) {
+  .div-casa {
+    width: 44px;
+    height: 44px;
+    margin: 1px;
+  }
+  #select {
+    height: 30px;
+    width: 180px;
+    font-size: 13px;
+  }
+  .select-group {
+    padding: 10px;
+    color: black;
+  }
+  .select-group span {
+    padding: 5px;
+    font-size: 15px;
+    padding-left: 5px;
+  }
+}
+
+@media (max-width: 420px), (max-height: 420px) {
+  .div-casa {
+    width: 25px;
+    height: 25px;
+    margin: 1px;
+  }
 }
