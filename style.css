@@ -70,14 +70,33 @@
     height: 300px;
   }
   .div-casa {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     margin: 1px;
   }
 }
 
 .game-dice {
-  width: 300px;
   position: absolute;
   top: 0;
+  width: 100%;
 }
+
+#scene {
+  --diePad: 0.2;
+  --minAxis: min(200px, 300px);
+  --maxAxis: max(200px, 300px);
+}
+
+body{
+  background-color: #3CA0D0;
+}
+.game-container {
+margin-top: 200px;
+
+}
+
+.game-dice-back {
+  background-color: #034769;
+}
+
