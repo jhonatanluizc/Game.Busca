@@ -15,7 +15,7 @@
 }
 
 .div-casa {
-  background: #000;
+  background: #02001F;
   width: 90px;
   height: 90px;
   display: inline-block;
@@ -43,8 +43,8 @@
     width: 600px;
     height: 600px;
   }
+
   .div-casa {
-    background: #000;
     width: 65px;
     height: 65px;
     display: inline-block;
@@ -120,4 +120,8 @@ textarea:focus, input:focus, select:focus {
   color: black;
   font-size: 20px;
   padding-left: 5px;
+}
+
+.div-casa.active{
+  background-color: #5D016D;
 }

@@ -256,7 +256,7 @@ Game = {
                 } else if (value === 1) {
 
                     /// :: Adiciona bloco invalido.
-                    $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa active' style='background-color: red;'></div>");
+                    $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa active'></div>");
                 } else {
 
                     /// :: Adiciona a valido.
