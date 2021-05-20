@@ -16,6 +16,7 @@ Game = {
         ['E', 1, 0, 0, 0, 0, 0, 0, 0, 'G']
         
     ],
+    MapaDefault: [],
 
     /// :: Roll.
     Roll: function () {
@@ -29,11 +30,13 @@ Game = {
     /// :: Eventos do jogo.
     Init: function () {
 
-        /// :: Todas as iniciações.
-        //Game.Start();
+        /// :: Cria um mapa padrao para o reset do jogo.
+        Game.MapaDefault = JSON.parse(JSON.stringify(Game.Mapa));
+
+        /// :: Renderiza o mapa.
         Game.Render();
 
-        /// :: Gera o mapa.
+        /// :: Atualiza o mapa da biblioteca.
         Game.Algoritmos.UpdateMap();
 
         $("#mapa").click(function (e) {
@@ -116,9 +119,11 @@ Game = {
                             if (!Game.FindPlayer('G')) {
                                 alert('Você Ganhou');
                             } else {
-                                $("#mapa").click();
-
-                                alert("Acabou seu turno");
+                                setTimeout(() => {
+                                    alert("Acabou seu turno");
+                                    $("#mapa").click();
+                                }, 400);
+                                
                             }
 
 
@@ -205,6 +210,11 @@ Game = {
                 Game.CurrentTurn = 'player';
             }
 
+        });
+
+        /// :: Reset game.
+        $("#game-reset").click(function(){
+            Game.Reset();
         });
 
     },
@@ -389,6 +399,16 @@ Game = {
             return amplitude;
         }
 
+    },
+
+    /// :: Reinicia o jogo.
+    Reset: function () {
+        Game.Mapa = JSON.parse(JSON.stringify(Game.MapaDefault));
+        Game.RollRemainP1 = 0;
+        Game.RollRemainCPU = 0;
+        Game.EnemyRout = [];
+        Game.CurrentTurn = 'player-roll';
+        Game.Render();
     },
 
     /// :: Funções para chamar os algoritmos.

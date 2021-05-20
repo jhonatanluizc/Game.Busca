@@ -47,8 +47,28 @@ body {
   margin-top: 160px;
 }
 
+.menu-game {
+  display: inline-block;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .game-dice-back {
   background-color: #034769;
+  display: inline-block;
+}
+
+.game-controllers {
+  text-align: center;
+  background-color: #016292;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-buttons {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr)
 }
 
 textarea:focus, input:focus, select:focus {
@@ -57,25 +77,34 @@ textarea:focus, input:focus, select:focus {
   outline: 0;
 }
 
+.game-controllers button {
+  width: 200px;
+  margin: 10px;
+  height: 25px;
+  background-color: #fff;
+  border: none;
+  transition: all .3s ease-in-out;
+}
+
+.game-controllers button:hover {
+  background-color: #d1d1e1;
+}
+
 #select {
-  height: 30px;
-  border-radius: 5px;
-  width: 220px;
-  font-size: 14px;
-  padding-left: 5px;
+  width: 200px;
+  margin: 10px;
+  height: 25px;
+  text-align: center;
+  text-align-last: center;
+  border: none;
+  transition: all .3s ease-in-out;
 }
 
-.select-group {
-  padding: 10px;
-  color: black;
+.game-controllers select:hover {
+  background-color: #e1e1e1;
 }
 
-.select-group span {
-  padding: 10px;
-  color: black;
-  font-size: 20px;
-  padding-left: 5px;
-}
+
 
 .div-casa.active {
   background-color: #5D016D;
@@ -110,20 +139,6 @@ textarea:focus, input:focus, select:focus {
     width: 44px;
     height: 44px;
     margin: 1px;
-  }
-  #select {
-    height: 30px;
-    width: 180px;
-    font-size: 13px;
-  }
-  .select-group {
-    padding: 10px;
-    color: black;
-  }
-  .select-group span {
-    padding: 5px;
-    font-size: 15px;
-    padding-left: 5px;
   }
 }
 

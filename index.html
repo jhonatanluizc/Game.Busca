@@ -16,20 +16,6 @@
 
     <div class="container">
 
-      <div class="select-group">
-        <span>Escolha o algoritmo de busca:</span>
-        <select class="form-control" id="select">
-          <option>Amplitude</option>
-          <option>Profundidade</option>
-          <option>Profundidade Limitada</option>
-          <option>Bidirecional</option>
-          <option>Aprofundamento Iterativo</option>
-          <option>Custo Uniforme</option>
-          <option>Greedy</option>
-          <option>Estrela</option>
-        </select>
-      </div>
-
       <div class="game">
         <div id="mapa" class="grid-container"></div>
       </div>
@@ -48,64 +34,86 @@
 
       <input type="checkbox" name="sound" checked hidden>
 
-      <div class="game-dice-back">
-        <section id="scene" data-roll-count-mod5="0" data-number-style="dots" data-dice-num="2">
-          <div class="diePad">
-            <div class="die" data-result="1">
-              <div class="face face-1">
-                <span>1</span>
-                <svg viewBox="0 0 4 4">
-                  <circle r="0.4" cx="2" cy="2" />
-                </svg>
-              </div>
-              <div class="face face-2">
-                <span>2</span>
-                <svg viewBox="0 0 4 4">
-                  <circle r="0.4" cx="3" cy="1" />
-                  <circle r="0.4" cx="1" cy="3" />
-                </svg>
-              </div>
-              <div class="face face-3">
-                <span>3</span>
-                <svg viewBox="0 0 4 4">
-                  <circle r="0.4" cx="3" cy="1" />
-                  <circle r="0.4" cx="2" cy="2" />
-                  <circle r="0.4" cx="1" cy="3" />
-                </svg>
-              </div>
-              <div class="face face-4">
-                <span>4</span>
-                <svg viewBox="0 0 4 4">
-                  <circle r="0.4" cx="1" cy="1" />
-                  <circle r="0.4" cx="3" cy="1" />
-                  <circle r="0.4" cx="1" cy="3" />
-                  <circle r="0.4" cx="3" cy="3" />
-                </svg>
-              </div>
-              <div class="face face-5">
-                <span>5</span>
-                <svg viewBox="0 0 4 4">
-                  <circle r="0.4" cx="1" cy="1" />
-                  <circle r="0.4" cx="3" cy="1" />
-                  <circle r="0.4" cx="2" cy="2" />
-                  <circle r="0.4" cx="1" cy="3" />
-                  <circle r="0.4" cx="3" cy="3" />
-                </svg>
-              </div>
-              <div class="face face-6">
-                <span>6</span>
-                <svg viewBox="0 0 4 4">
-                  <circle r="0.4" cx="1" cy="1" />
-                  <circle r="0.4" cx="3" cy="1" />
-                  <circle r="0.4" cx="1" cy="2" />
-                  <circle r="0.4" cx="3" cy="2" />
-                  <circle r="0.4" cx="1" cy="3" />
-                  <circle r="0.4" cx="3" cy="3" />
-                </svg>
+      <div class="menu-game">
+
+        <div class="game-controllers">
+          <div class="game-buttons">
+            <button id="game-reset">Reiniciar Jogo</button>
+            <!--<button id="game-credits">Créditos</button>-->
+            <select class="form-control" id="select">
+              <option>Amplitude</option>
+              <option>Profundidade</option>
+              <option>Profundidade Limitada</option>
+              <option>Bidirecional</option>
+              <option>Aprofundamento Iterativo</option>
+              <option>Custo Uniforme</option>
+              <option>Greedy</option>
+              <option>Estrela</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="game-dice-back">
+          <section id="scene" data-roll-count-mod5="0" data-number-style="dots" data-dice-num="2">
+            <div class="diePad">
+              <div class="die" data-result="1">
+                <div class="face face-1">
+                  <span>1</span>
+                  <svg viewBox="0 0 4 4">
+                    <circle r="0.4" cx="2" cy="2" />
+                  </svg>
+                </div>
+                <div class="face face-2">
+                  <span>2</span>
+                  <svg viewBox="0 0 4 4">
+                    <circle r="0.4" cx="3" cy="1" />
+                    <circle r="0.4" cx="1" cy="3" />
+                  </svg>
+                </div>
+                <div class="face face-3">
+                  <span>3</span>
+                  <svg viewBox="0 0 4 4">
+                    <circle r="0.4" cx="3" cy="1" />
+                    <circle r="0.4" cx="2" cy="2" />
+                    <circle r="0.4" cx="1" cy="3" />
+                  </svg>
+                </div>
+                <div class="face face-4">
+                  <span>4</span>
+                  <svg viewBox="0 0 4 4">
+                    <circle r="0.4" cx="1" cy="1" />
+                    <circle r="0.4" cx="3" cy="1" />
+                    <circle r="0.4" cx="1" cy="3" />
+                    <circle r="0.4" cx="3" cy="3" />
+                  </svg>
+                </div>
+                <div class="face face-5">
+                  <span>5</span>
+                  <svg viewBox="0 0 4 4">
+                    <circle r="0.4" cx="1" cy="1" />
+                    <circle r="0.4" cx="3" cy="1" />
+                    <circle r="0.4" cx="2" cy="2" />
+                    <circle r="0.4" cx="1" cy="3" />
+                    <circle r="0.4" cx="3" cy="3" />
+                  </svg>
+                </div>
+                <div class="face face-6">
+                  <span>6</span>
+                  <svg viewBox="0 0 4 4">
+                    <circle r="0.4" cx="1" cy="1" />
+                    <circle r="0.4" cx="3" cy="1" />
+                    <circle r="0.4" cx="1" cy="2" />
+                    <circle r="0.4" cx="3" cy="2" />
+                    <circle r="0.4" cx="1" cy="3" />
+                    <circle r="0.4" cx="3" cy="3" />
+                  </svg>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
+
       </div>
 
     </div>
