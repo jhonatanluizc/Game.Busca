@@ -14,7 +14,7 @@ Game = {
         [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
         [0, 0, 0, 1, 0, 0, 0, 0, 1, 0],
         ['E', 1, 0, 0, 0, 0, 0, 0, 0, 'G']
-        
+
     ],
     MapaDefault: [],
 
@@ -105,7 +105,7 @@ Game = {
                             Game.RollRemainP1--;
 
                             if (!Game.FindPlayer('G')) {
-                                alert('Você Ganhou');
+                                alert('Você Ganhou!');
                             }
 
                         } else if (Game.RollRemainP1 === 1) {
@@ -117,18 +117,17 @@ Game = {
                             Game.CurrentTurn = 'enemy-roll';
 
                             if (!Game.FindPlayer('G')) {
-                                alert('Você Ganhou');
+                                alert('Você Ganhou!');
                             } else {
-                                setTimeout(() => {
-                                    alert("Acabou seu turno");
+                                setTimeout(function () {
+                                    alert("Acabou o Seu Turno");
                                     $("#mapa").click();
                                 }, 400);
-                                
+
                             }
 
-
                         } else {
-                            alert("Espere a sua vez");
+                            alert("Espere Sua Vez");
 
                         }
                     }
@@ -138,7 +137,7 @@ Game = {
             } else if (Game.CurrentTurn === 'player-roll') {
 
                 if (Game.RollRemainP1 === 0) {
-                    alert('Role o dado!')
+                    alert('Role o Dado!')
                 }
 
             } else if (Game.CurrentTurn === 'enemy-roll') {
@@ -184,7 +183,7 @@ Game = {
                             Game.CurrentTurn = 'player-roll';
 
                             setTimeout(function () {
-                                alert('Turno do jogador');
+                                alert('Turno do Jogador');
                             }, 500);
                         } else {
                             alert("Você Perdeu!");
@@ -196,7 +195,7 @@ Game = {
 
 
             } else {
-                alert('Error');
+                alert('Erro Inesperado!');
             }
 
         });
@@ -213,7 +212,7 @@ Game = {
         });
 
         /// :: Reset game.
-        $("#game-reset").click(function(){
+        $("#game-reset").click(function () {
             Game.Reset();
         });
 
@@ -409,6 +408,11 @@ Game = {
         Game.EnemyRout = [];
         Game.CurrentTurn = 'player-roll';
         Game.Render();
+
+        setTimeout(function () {
+            alert("Jogo Reiniciado");
+        }, 500);
+
     },
 
     /// :: Funções para chamar os algoritmos.
