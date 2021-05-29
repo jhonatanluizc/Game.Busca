@@ -321,7 +321,7 @@ Game = {
                     $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa' ></div>");
 
                     /// :: Adiciona o player na casa.
-                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='player' src='p1.gif' />");
+                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='player' src='assets/img/game/player.gif' />");
 
                 } else if (value === "E") {
 
@@ -329,7 +329,7 @@ Game = {
                     $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa' ></div>");
 
                     /// :: Adiciona o inimigo na casa.
-                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='player' src='enemy.gif' />");
+                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='player' src='assets/img/game/enemy.gif' />");
 
                 } else if (value === "G") {
 
@@ -337,7 +337,7 @@ Game = {
                     $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa' ></div>");
 
                     /// :: Adiciona a chegada na casa.
-                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='gold' src='goal.gif' />");
+                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='gold' src='assets/img/game/goal.gif' />");
 
                 } else if (value === 1) {
 
