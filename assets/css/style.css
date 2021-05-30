@@ -165,18 +165,18 @@ textarea:focus, input:focus, select:focus {
 
 #theme-2 {
   background: #000;
-  background-image: url('/assets/img/game/theme-2/background.gif');
+  background-image: url('https://sotndragon.github.io/Game.Busca/assets/img/game/theme-2/background.gif');
   background-size: cover;
 }
 
 #theme-2 .game-controllers {
   background-color: #000;
-  background-image: url('/assets/img/game/theme-2/menu-background.jpg');
+  background-image: url('https://sotndragon.github.io/Game.Busca/assets/img/game/theme-2/menu-background.jpg');
   background-size: cover;
 }
 
 #theme-2 .div-casa.enabled {
-  background-image: url('/assets/img/game/theme-2/enabled-block.jpg');
+  background-image: url('https://sotndragon.github.io/Game.Busca/assets/img/game/theme-2/enabled-block.jpg');
 }
 
 #theme-2 .div-casa.enabled:hover {
@@ -184,12 +184,12 @@ textarea:focus, input:focus, select:focus {
 }
 
 #theme-2 .div-casa.disabled {
-  background-image: url('/assets/img/game/theme-2/disabled-block.gif');
+  background-image: url('https://sotndragon.github.io/Game.Busca/assets/img/game/theme-2/disabled-block.gif');
 }
 
 #theme-2 .game-dice-back {
   background-color: #000;
-  background-image: url('/assets/img/game/theme-2/menu-background.jpg');
+  background-image: url('https://sotndragon.github.io/Game.Busca/assets/img/game/theme-2/menu-background.jpg');
   background-size: cover;
   display: inline-block;
 }
