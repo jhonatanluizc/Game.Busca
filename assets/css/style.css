@@ -1,22 +1,27 @@
 * {
   margin: 0;
   padding: 0;
+  border: 0;
 }
 
+body {
+  background-color: #3CA0D0;
+}
+
+/* GAME */
+
+#game{
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+#game #mapa{
+  padding-top: 5%;
+}
 .container {
   text-align: center;
-}
-
-.div-casa {
-  background: #02001F;
-  width: 90px;
-  height: 90px;
-  display: inline-block;
-  margin: 2px;
-}
-
-.div-casa:hover {
-  background: #0b00a1;
 }
 
 .player {
@@ -37,10 +42,6 @@
   --diePad: 0.2;
   --minAxis: min(200px, 300px);
   --maxAxis: max(200px, 300px);
-}
-
-body {
-  background-color: #3CA0D0;
 }
 
 .game-container {
@@ -90,7 +91,7 @@ textarea:focus, input:focus, select:focus {
   background-color: #d1d1e1;
 }
 
-#select {
+.game-select {
   width: 200px;
   margin: 10px;
   height: 25px;
@@ -104,9 +105,19 @@ textarea:focus, input:focus, select:focus {
   background-color: #e1e1e1;
 }
 
+.div-casa {
+  background: #02001F;
+  width: 90px;
+  height: 90px;
+  display: inline-block;
+  margin: 2px;
+}
 
+.div-casa:hover {
+  background: #0b00a1;
+}
 
-.div-casa.active {
+.div-casa.disabled {
   background-color: #5D016D;
 }
 
@@ -149,3 +160,177 @@ textarea:focus, input:focus, select:focus {
     margin: 1px;
   }
 }
+
+/* THEME 2*/
+
+#theme-2 {
+  background: #000;
+  background-image: url('/assets/img/game/theme-2/background.gif');
+  background-size: cover;
+}
+
+#theme-2 .game-controllers {
+  background-color: #000;
+  background-image: url('/assets/img/game/theme-2/brick.jpg');
+  background-size: cover;
+}
+
+#theme-2 .div-casa.enabled {
+  background-image: url('/assets/img/game/theme-2/enabled-block.jpg');
+}
+
+#theme-2 .div-casa.enabled:hover {
+  opacity: 0.6;
+}
+
+#theme-2 .div-casa.disabled {
+  background-image: url('/assets/img/game/theme-2/disabled-block.gif');
+}
+
+#theme-2 .game-dice-back {
+  background-color: #000;
+  background-image: url('/assets/img/game/theme-2/brick.jpg');
+  background-size: cover;
+  display: inline-block;
+}
+
+/* THEME 2*/
+
+/* TEAM */
+
+#about-team {
+  background: #00000080;
+  margin: 0;
+  color: #fff;
+}
+
+.team {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.team .team-content {
+  position: absolute;
+  bottom: 25px;
+  margin: 0 20px;
+  left: 0;
+  right: 0;
+}
+
+.team .team-content-inner {
+  padding: 20px 20px;
+  width: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.team .team-content-inner .team-social {
+  margin-left: auto;
+}
+
+.team .team-content-inner .team-social .nav .nav-link {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.team .team-content-inner .team-contact {
+  opacity: 0;
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.team:hover .team-content-inner {
+  
+}
+
+.team-content-inner .team-info .avatar-name {
+  margin-bottom: 0;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+  color: #fff;
+  transition: .5s ease-in-out;
+  text-transform: uppercase;
+}
+
+.team-content-inner .team-info .team-position {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  color: #fff;
+  transition: .5s ease-in-out;
+  text-transform: uppercase;
+}
+
+.team-02 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.team-02 .team-avatar {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 50%;
+  flex: 0 50%;
+}
+
+.team-02 .team-content {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 50%;
+  flex: 0 50%;
+}
+
+.team-02 .team-content-inner {
+  padding: 0px;
+}
+
+.team-02 .team-content-inner .team-contact {
+  margin-top: 20px;
+}
+
+.team-02 .team-content-inner .team-contact .nav .nav-link {
+  color: #2d3037;
+  padding: 5px;
+}
+
+.team-02 .team-content-inner .team-contact .nav .nav-link:hover {
+  color: #009b72;
+}
+
+.team-02 .team-content-inner .team-desc {
+  color: #2d3037;
+}
+
+.social a.text-muted:hover {
+  color: #009b72 !important;
+}
+
+@media (max-width: 575.98px) {
+  .team .team-content {
+    margin: 0 15px;
+  }
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+#about-team .justify-content-center {
+  padding: 20px;
+}
+
+/* TEAM */

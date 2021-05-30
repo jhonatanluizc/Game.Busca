@@ -56,7 +56,7 @@ Game = {
             if (Game.CurrentTurn === 'player') {
 
                 /// :: Pega somente os cliques validos.
-                if (x !== "mapa" && y !== "mapa" && x !== "player" && e.target.className !== "div-casa active") {
+                if (x !== "mapa" && y !== "mapa" && x !== "player" && e.target.className !== "div-casa disabled") {
 
                     /// :: verifica o x.
                     if (x === 'gold') {
@@ -293,6 +293,13 @@ Game = {
             Game.Reset();
         });
 
+        /// :: Muda o tema.
+        $("#game-theme").change(function () {
+            var theme = $('#game-theme').find(":selected").val();
+            $('body').attr("id", theme);
+            Game.Render();
+        });
+
     },
 
     /// :: Renderiza a matriz.
@@ -314,40 +321,43 @@ Game = {
                 var id_linha = "linha-" + y;
                 var id_coluna = "coluna-" + x;
 
+                /// :: Pegar tema atual.
+                var theme = $('body').attr('id');
+
                 /// :: Verifica o que deve ser renderizado.
                 if (value === "P") {
 
                     /// :: Adiciona a casa.
-                    $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa' ></div>");
+                    $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa enabled' ></div>");
 
                     /// :: Adiciona o player na casa.
-                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='player' src='assets/img/game/player.gif' />");
+                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='player' src='assets/img/game/" + theme + "/player.gif' />");
 
                 } else if (value === "E") {
 
                     /// :: Adiciona a casa.
-                    $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa' ></div>");
+                    $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa enabled' ></div>");
 
                     /// :: Adiciona o inimigo na casa.
-                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='player' src='assets/img/game/enemy.gif' />");
+                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='player' src='assets/img/game/" + theme + "/enemy.gif' />");
 
                 } else if (value === "G") {
 
                     /// :: Adiciona a casa.
-                    $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa' ></div>");
+                    $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa enabled' ></div>");
 
                     /// :: Adiciona a chegada na casa.
-                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='gold' src='assets/img/game/goal.gif' />");
+                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='gold' src='assets/img/game/" + theme + "/goal.gif' />");
 
                 } else if (value === 1) {
 
                     /// :: Adiciona bloco invalido.
-                    $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa active'></div>");
+                    $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa disabled'></div>");
 
                 } else {
 
                     /// :: Adiciona bloco valido.
-                    $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa'></div>");
+                    $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa enabled'></div>");
                 }
 
             });

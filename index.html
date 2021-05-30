@@ -2,118 +2,217 @@
 <html lang="pt-br">
 
 <head>
+  <title>Warriror Runner IA Game</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gamezinho</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/dice.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body id="theme-1">
 
-  <div class="game-container">
-    <div class="game-dice">
+  <section id="game">
+    <div class="game-container">
+      <div class="game-dice">
 
-      <input type="range" name="numDice" min="1" max="6" value="2" hidden>
-      <input type="radio" name="numberStyle" value="dots" checked hidden>
-      <input type="radio" name="numberStyle" value="numbers" hidden>
-      <input type="checkbox" name="shake" hidden>
-      <input type="checkbox" name="sound" checked hidden>
+        <input type="range" name="numDice" min="1" max="6" value="2" hidden>
+        <input type="radio" name="numberStyle" value="dots" checked hidden>
+        <input type="radio" name="numberStyle" value="numbers" hidden>
+        <input type="checkbox" name="shake" hidden>
+        <input type="checkbox" name="sound" checked hidden>
 
-      <div class="menu-game">
-        
-        <div class="game-controllers">
-          <div class="game-buttons">
-            <button id="game-reset">Reiniciar Jogo</button>
-            <!--<button id="game-credits">Créditos</button>-->
-            <select class="form-control" id="select">
-              <option>Amplitude</option>
-              <option>Profundidade</option>
-              <option>Profundidade Limitada</option>
-              <option>Bidirecional</option>
-              <option>Aprofundamento Iterativo</option>
-              <option>Custo Uniforme</option>
-              <option>Greedy</option>
-              <option>Estrela</option>
-            </select>
+        <div class="menu-game">
+
+          <div class="game-controllers">
+            <div class="game-buttons">
+              <button id="game-reset">Reiniciar Jogo</button>
+              <!--<button id="game-credits">Créditos</button>-->
+              <select class="game-select" id="game-theme">
+                <option value="theme-1">Tema 1</option>
+                <option value="theme-2">Tema 2</option>
+              </select>
+              <select class="game-select" id="select">
+                <option>Amplitude</option>
+                <option>Profundidade</option>
+                <option>Profundidade Limitada</option>
+                <option>Bidirecional</option>
+                <option>Aprofundamento Iterativo</option>
+                <option>Custo Uniforme</option>
+                <option>Greedy</option>
+                <option>Estrela</option>
+              </select>
+            </div>
           </div>
+
+          <div class="game-dice-back">
+            <section id="scene" data-roll-count-mod5="0" data-number-style="dots" data-dice-num="2">
+              <div class="diePad">
+                <div class="die" data-result="1">
+                  <div class="face face-1">
+                    <span>1</span>
+                    <svg viewBox="0 0 4 4">
+                      <circle r="0.4" cx="2" cy="2" />
+                    </svg>
+                  </div>
+                  <div class="face face-2">
+                    <span>2</span>
+                    <svg viewBox="0 0 4 4">
+                      <circle r="0.4" cx="3" cy="1" />
+                      <circle r="0.4" cx="1" cy="3" />
+                    </svg>
+                  </div>
+                  <div class="face face-3">
+                    <span>3</span>
+                    <svg viewBox="0 0 4 4">
+                      <circle r="0.4" cx="3" cy="1" />
+                      <circle r="0.4" cx="2" cy="2" />
+                      <circle r="0.4" cx="1" cy="3" />
+                    </svg>
+                  </div>
+                  <div class="face face-4">
+                    <span>4</span>
+                    <svg viewBox="0 0 4 4">
+                      <circle r="0.4" cx="1" cy="1" />
+                      <circle r="0.4" cx="3" cy="1" />
+                      <circle r="0.4" cx="1" cy="3" />
+                      <circle r="0.4" cx="3" cy="3" />
+                    </svg>
+                  </div>
+                  <div class="face face-5">
+                    <span>5</span>
+                    <svg viewBox="0 0 4 4">
+                      <circle r="0.4" cx="1" cy="1" />
+                      <circle r="0.4" cx="3" cy="1" />
+                      <circle r="0.4" cx="2" cy="2" />
+                      <circle r="0.4" cx="1" cy="3" />
+                      <circle r="0.4" cx="3" cy="3" />
+                    </svg>
+                  </div>
+                  <div class="face face-6">
+                    <span>6</span>
+                    <svg viewBox="0 0 4 4">
+                      <circle r="0.4" cx="1" cy="1" />
+                      <circle r="0.4" cx="3" cy="1" />
+                      <circle r="0.4" cx="1" cy="2" />
+                      <circle r="0.4" cx="3" cy="2" />
+                      <circle r="0.4" cx="1" cy="3" />
+                      <circle r="0.4" cx="3" cy="3" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
         </div>
 
-        <div class="game-dice-back">
-          <section id="scene" data-roll-count-mod5="0" data-number-style="dots" data-dice-num="2">
-            <div class="diePad">
-              <div class="die" data-result="1">
-                <div class="face face-1">
-                  <span>1</span>
-                  <svg viewBox="0 0 4 4">
-                    <circle r="0.4" cx="2" cy="2" />
-                  </svg>
-                </div>
-                <div class="face face-2">
-                  <span>2</span>
-                  <svg viewBox="0 0 4 4">
-                    <circle r="0.4" cx="3" cy="1" />
-                    <circle r="0.4" cx="1" cy="3" />
-                  </svg>
-                </div>
-                <div class="face face-3">
-                  <span>3</span>
-                  <svg viewBox="0 0 4 4">
-                    <circle r="0.4" cx="3" cy="1" />
-                    <circle r="0.4" cx="2" cy="2" />
-                    <circle r="0.4" cx="1" cy="3" />
-                  </svg>
-                </div>
-                <div class="face face-4">
-                  <span>4</span>
-                  <svg viewBox="0 0 4 4">
-                    <circle r="0.4" cx="1" cy="1" />
-                    <circle r="0.4" cx="3" cy="1" />
-                    <circle r="0.4" cx="1" cy="3" />
-                    <circle r="0.4" cx="3" cy="3" />
-                  </svg>
-                </div>
-                <div class="face face-5">
-                  <span>5</span>
-                  <svg viewBox="0 0 4 4">
-                    <circle r="0.4" cx="1" cy="1" />
-                    <circle r="0.4" cx="3" cy="1" />
-                    <circle r="0.4" cx="2" cy="2" />
-                    <circle r="0.4" cx="1" cy="3" />
-                    <circle r="0.4" cx="3" cy="3" />
-                  </svg>
-                </div>
-                <div class="face face-6">
-                  <span>6</span>
-                  <svg viewBox="0 0 4 4">
-                    <circle r="0.4" cx="1" cy="1" />
-                    <circle r="0.4" cx="3" cy="1" />
-                    <circle r="0.4" cx="1" cy="2" />
-                    <circle r="0.4" cx="3" cy="2" />
-                    <circle r="0.4" cx="1" cy="3" />
-                    <circle r="0.4" cx="3" cy="3" />
-                  </svg>
+      </div>
+      <div class="container">
+        <div class="game">
+          <div id="mapa" class="grid-container"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about-team">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-8 col-md-10 text-center">
+          <div class="mb-3">
+            <h2>Conheça Nossa Equipe de Desenvolvimento</h2>
+            <p>A equipe é composta por estudantes da Disciplina de Inteligencia Artificial da Fatec de Cruzeiro</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="team">
+            <div class="team-avatar">
+              <img class="w-100" src="assets/img/team/jhonatan.jpg" alt="">
+            </div>
+            <div class="team-content">
+              <div class="team-content-inner">
+                <div class="d-flex">
+                  <div class="team-info">
+                    <h5 class="mb-0"><a href="https://www.linkedin.com/in/sotndragon/" target="_blank"
+                        class="avatar-name">Jhonatan Luiz</a></h5>
+                    <span class="team-position">Designer / Programador</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </section>
+          </div>
         </div>
-
+        <div class="col-lg-3 col-md-6">
+          <div class="team">
+            <div class="team-avatar">
+              <img class="w-100" src="assets/img/team/leonardo.jpg" alt="">
+            </div>
+            <div class="team-content">
+              <div class="team-content-inner">
+                <div class="d-flex">
+                  <div class="team-info">
+                    <h5 class="mb-0"><a href="https://www.linkedin.com/in/leonardo-gomes-63a2b717b/" target="_blank"
+                        class="avatar-name">Leonardo Gomes</a></h5>
+                    <span class="team-position">Designer / Programador</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="team">
+            <div class="team-avatar">
+              <img class="w-100" src="assets/img/team/luisa.jpg" alt="">
+            </div>
+            <div class="team-content">
+              <div class=" team-content-inner">
+                <div class="d-flex">
+                  <div class="team-info">
+                    <h5 class="mb-0"><a href="https://www.linkedin.com/in/luisa-couto-41b68b16a/" target="_blank"
+                        class="avatar-name">Luisa Couto</a></h5>
+                    <span class="team-position">Designer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="team">
+            <div class="team-avatar">
+              <img class="w-100" src="assets/img/team/mateus.jpg" alt="">
+            </div>
+            <div class="team-content">
+              <div class=" team-content-inner">
+                <div class="d-flex">
+                  <div class="team-info">
+                    <h5 class="mb-0"><a href="https://www.linkedin.com/in/mateus-silva-5b628b17b/" target="_blank"
+                        class="avatar-name">Mateus Leonardo</a></h5>
+                    <span class="team-position">Designer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-    </div>
-    <div class="container">
-      <div class="game">
-        <div id="mapa" class="grid-container"></div>
+      <div class="row">
+        <div class="col-md-12 text-center mb-2"> Warriror Runner IA Game - 2021 </div>
       </div>
     </div>
-  </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </section>
+
+  <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/dice.js"></script>
   <script src="assets/js/algoritmos.js"></script>
   <script src="assets/js/script.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
 </body>
 
 </html>
