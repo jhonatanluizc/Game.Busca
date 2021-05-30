@@ -32,6 +32,9 @@ Game = {
     /// :: Eventos do jogo.
     Init: function () {
 
+        /// :: Load images to render.
+        Game.LoadImages();
+
         /// :: Cria um mapa padrão para o reset do jogo.
         Game.MapaDefault = JSON.parse(JSON.stringify(Game.Mapa));
 
@@ -513,6 +516,16 @@ Game = {
 
     },
 
+    LoadImages: function () {
+        var files = ['player.gif', 'enemy.gif', 'goal.gif', 'background.gif', 'menu-background.jpg', 'enabled-block.jpg', 'disabled-block.gif'];
+
+        $(files).each((index, value) => {
+            var image = 'assets/img/game/theme-2/' + value;
+            $('#load-images').append('<img src=' + image + ' />');
+        });
+
+    },
+
     /// :: Funções para chamar os algoritmos da biblioteca.
     Algoritmos: {
 
@@ -587,6 +600,19 @@ Game = {
             Game.Algoritmos.UpdateMap();
             return Game.Algoritmos.Solucao.a_estrela(origem, destino);
         },
+
+        Base64FromUrl = function (url) {
+            const data = await fetch(url);
+            const blob = await data.blob();
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(blob);
+                reader.onloadend = () => {
+                    const base64data = reader.result;
+                    resolve(base64data);
+                }
+            });
+        }
     }
 }
 

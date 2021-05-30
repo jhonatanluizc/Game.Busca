@@ -171,7 +171,7 @@ textarea:focus, input:focus, select:focus {
 
 #theme-2 .game-controllers {
   background-color: #000;
-  background-image: url('/assets/img/game/theme-2/brick.jpg');
+  background-image: url('/assets/img/game/theme-2/menu-background.jpg');
   background-size: cover;
 }
 
@@ -189,7 +189,7 @@ textarea:focus, input:focus, select:focus {
 
 #theme-2 .game-dice-back {
   background-color: #000;
-  background-image: url('/assets/img/game/theme-2/brick.jpg');
+  background-image: url('/assets/img/game/theme-2/menu-background.jpg');
   background-size: cover;
   display: inline-block;
 }
