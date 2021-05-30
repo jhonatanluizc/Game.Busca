@@ -32,9 +32,6 @@ Game = {
     /// :: Eventos do jogo.
     Init: function () {
 
-        /// :: Load images to render.
-        Game.LoadImages();
-
         /// :: Cria um mapa padrão para o reset do jogo.
         Game.MapaDefault = JSON.parse(JSON.stringify(Game.Mapa));
 
@@ -513,16 +510,6 @@ Game = {
         setTimeout(function () {
             alert("Jogo Reiniciado");
         }, 500);
-
-    },
-
-    LoadImages: function () {
-        var files = ['player.gif', 'enemy.gif', 'goal.gif', 'background.gif', 'menu-background.jpg', 'enabled-block.jpg', 'disabled-block.gif'];
-
-        $(files).each((index, value) => {
-            var image = 'assets/img/game/theme-2/' + value;
-            $('#load-images').append('<img src=' + image + ' />');
-        });
 
     },
 
