@@ -80,7 +80,7 @@ textarea:focus, input:focus, select:focus {
 
 .game-controllers button {
   width: 200px;
-  margin: 10px;
+  margin: 5px;
   height: 25px;
   background-color: #fff;
   border: none;
@@ -93,7 +93,7 @@ textarea:focus, input:focus, select:focus {
 
 .game-select {
   width: 200px;
-  margin: 10px;
+  margin: 5px;
   height: 25px;
   text-align: center;
   text-align-last: center;
