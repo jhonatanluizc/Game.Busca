@@ -1,2 +1,2 @@
 # Game.Busca
-# https://sotndragon.github.io/Game.Busca/
+# https://jhonatanluizc.github.io/Game.Busca/
