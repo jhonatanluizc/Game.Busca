@@ -331,7 +331,7 @@ Game = {
                     $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa enabled' ></div>");
 
                     /// :: Adiciona o player na casa.
-                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='player' src='assets/img/game/" + theme + "/player.gif' />");
+                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='player' src='./src/img/game/" + theme + "/player.gif' />");
 
                 } else if (value === "E") {
 
@@ -339,7 +339,7 @@ Game = {
                     $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa enabled' ></div>");
 
                     /// :: Adiciona o inimigo na casa.
-                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='player' src='assets/img/game/" + theme + "/enemy.gif' />");
+                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='player' src='./src/img/game/" + theme + "/enemy.gif' />");
 
                 } else if (value === "G") {
 
@@ -347,7 +347,7 @@ Game = {
                     $("#" + id_linha).append("<div id=" + id_coluna + " class='div-casa enabled' ></div>");
 
                     /// :: Adiciona a chegada na casa.
-                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='gold' src='assets/img/game/" + theme + "/goal.gif' />");
+                    $("#" + id_linha).find("#" + id_coluna).append("<img class='player' id='gold' src='./src/img/game/" + theme + "/goal.gif' />");
 
                 } else if (value === 1) {
 
@@ -517,7 +517,7 @@ Game = {
     Algoritmos: {
 
         /// :: Cria uma solução.
-        Solucao: new busca(),
+        Solucao: new Search(),
 
         /// :: Atualiza o mapa.
         UpdateMap: function () {
@@ -529,7 +529,7 @@ Game = {
 
             ///:: Atualiza o mapa.
             Game.Algoritmos.UpdateMap();
-            return Game.Algoritmos.Solucao.amplitude(origem, destino);
+            return Game.Algoritmos.Solucao.breadthFirst(origem, destino);
         },
 
         /// :: Profundidade.
@@ -537,7 +537,7 @@ Game = {
 
             ///:: Atualiza o mapa.
             Game.Algoritmos.UpdateMap();
-            return Game.Algoritmos.Solucao.profundidade(origem, destino);
+            return Game.Algoritmos.Solucao.depthFirst(origem, destino);
         },
 
         /// :: Profundidade Limitada.
@@ -545,7 +545,7 @@ Game = {
 
             ///:: Atualiza o mapa.
             Game.Algoritmos.UpdateMap();
-            return Game.Algoritmos.Solucao.profundidade_limitada(origem, destino, 15);
+            return Game.Algoritmos.Solucao.depthLimited(origem, destino, 15);
         },
 
         /// :: Aprofundamento Iterativo.
@@ -553,7 +553,7 @@ Game = {
 
             ///:: Atualiza o mapa.
             Game.Algoritmos.UpdateMap();
-            return Game.Algoritmos.Solucao.aprofundamento_iterativo(origem, destino);
+            return Game.Algoritmos.Solucao.iterativeDeepening(origem, destino);
         },
 
         /// :: Bidirecional.
@@ -561,7 +561,7 @@ Game = {
 
             ///:: Atualiza o mapa.
             Game.Algoritmos.UpdateMap();
-            return Game.Algoritmos.Solucao.bidirecional(origem, destino);
+            return Game.Algoritmos.Solucao.bidirectional(origem, destino);
         },
 
         /// :: Custo Uniforme.
@@ -569,7 +569,7 @@ Game = {
 
             ///:: Atualiza o mapa.
             Game.Algoritmos.UpdateMap();
-            return Game.Algoritmos.Solucao.custo_uniforme(origem, destino);
+            return Game.Algoritmos.Solucao.uniformCost(origem, destino);
         },
 
         /// :: Greedy.
@@ -585,7 +585,7 @@ Game = {
 
             ///:: Atualiza o mapa.
             Game.Algoritmos.UpdateMap();
-            return Game.Algoritmos.Solucao.a_estrela(origem, destino);
+            return Game.Algoritmos.Solucao.aStar(origem, destino);
         },
     }
 }
